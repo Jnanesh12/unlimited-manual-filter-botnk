@@ -1,4 +1,4 @@
-import asyncio
+
 import os
 import re
 import io
@@ -88,9 +88,6 @@ async def addfilter(client, message):
                   message.reply_to_message.audio or\
                   message.reply_to_message.animation or\
                   message.reply_to_message.sticker
-                  
-                  await asyncio.sleep(80) 
-                  await rm.delete()
             if msg:
                 fileid = msg.file_id
                 reply_text = message.reply_to_message.caption.html
