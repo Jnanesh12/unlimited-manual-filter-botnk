@@ -221,20 +221,7 @@ async def start(client, message):
                 ]
             ]
         ),
-        reply_to_message_id=message.message_id
-    )
-    if Config.SAVE_USER == "yes":
-        try:
-            await add_user(
-                str(message.from_user.id),
-                str(message.from_user.username),
-                str(message.from_user.first_name + " " + (message.from_user.last_name or "")),
-                str(message.from_user.dc_id)
-            )
-        except:
-            pass
-
-
+        
 @trojanz.on_message(filters.command('help') & filters.private)
 async def help(client, message):
     await message.reply_text(
